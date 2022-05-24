@@ -1,9 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Quail.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/grass.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Pipe.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 513.642, 56.3381 )
 
 [node name="World" type="Node2D"]
 
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 586.798, 163.614 )
+scale = Vector2( 3.106, 4 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 546.054, 426.206 )
+collision_layer = 2
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+position = Vector2( -32.8569, 118.58 )
+scale = Vector2( 4.08922, 2.09954 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0.71, 0, 251.855, 53.5891 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -34, 118.536 )
+shape = SubResource( 1 )
+
 [node name="Quail" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512.054, 36.5838 )
-scale = Vector2( 2, 2 )
+position = Vector2( 177.784, 243.439 )
+scale = Vector2( 2.5, 2.5 )
