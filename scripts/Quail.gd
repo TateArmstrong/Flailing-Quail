@@ -30,4 +30,4 @@ func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("up")):
 		velocity.y -= JUMP
 	
-	velocity = move_and_slide(velocity)
+	move_and_slide(velocity)
