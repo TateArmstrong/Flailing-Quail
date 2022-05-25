@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/long_pipe-1.png.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Pipe.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.9714, 50.1622 )
@@ -8,7 +9,10 @@ extents = Vector2( 15.9714, 50.1622 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15.9835, 50.524 )
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Pipe" type="KinematicBody2D"]
+scale = Vector2( 3, 4 )
+collision_layer = 2
+script = ExtResource( 2 )
 
 [node name="long_pipe" type="Sprite" parent="."]
 texture = ExtResource( 1 )

@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY
+	velocity.x = 0
 	
 	if velocity.y > MAX_SPEED:
 		velocity.y = 800
